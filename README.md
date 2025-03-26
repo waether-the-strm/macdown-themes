@@ -1,8 +1,55 @@
 # MacDown Themes Collection
 
-A collection of custom themes for the MacDown markdown editor, focusing on modern design principles and readability.
+A collection of custom themes and styles for the MacDown markdown editor, focusing on modern design principles and readability.
 
-## Available Themes
+## Repository Structure
+
+This repository contains both editor styles (CSS) and syntax highlighting themes:
+
+```
+.
+├── README.md
+├── styles/           # CSS styles for markdown preview
+│   └── *.css
+├── themes/           # Syntax highlighting themes
+│   └── *.style
+└── .gitignore
+```
+
+## Installation
+
+### Option 1: Symlinks (Recommended)
+
+This method keeps your themes in sync with the repository:
+
+```bash
+# Create symlinks (after backing up existing folders if needed)
+ln -sf ~/Projects/macdown-themes/styles/* ~/Library/Application\ Support/MacDown/Styles/
+ln -sf ~/Projects/macdown-themes/themes/* ~/Library/Application\ Support/MacDown/Themes/
+```
+
+### Option 2: Manual Copy
+
+1. Clone this repository:
+   ```bash
+   git clone [repository-url]
+   ```
+
+2. Copy the desired files:
+   ```bash
+   # For CSS preview styles
+   cp styles/*.css ~/Library/Application\ Support/MacDown/Styles/
+   
+   # For syntax highlighting themes
+   cp themes/*.style ~/Library/Application\ Support/MacDown/Themes/
+   ```
+
+3. In MacDown's preferences:
+   - Go to the "Editor" tab
+   - Select your installed theme from the "Theme" dropdown
+   - Select your installed style from the "Style" dropdown
+
+## Available Styles
 
 ### Mou Night+ Modern v1
 A modern take on the classic Mou Night+ theme, featuring:
@@ -13,27 +60,22 @@ A modern take on the classic Mou Night+ theme, featuring:
 - Improved code blocks
 - Print-friendly styles
 
-## Installation
+[List continues with other styles...]
 
-1. Clone this repository:
-   ```bash
-   git clone [repository-url]
-   ```
+## Available Themes
 
-2. Copy the desired theme file to MacDown's Styles directory:
-   ```bash
-   cp styles/[theme-name].css ~/Library/Application\ Support/MacDown/Styles/
-   ```
-
-3. In MacDown's preferences:
-   - Go to the "Editor" tab
-   - Select your installed theme from the "Theme" dropdown
+- Mou Fresh Air/Air+
+- Mou Night/Night+
+- Mou Paper/Paper+
+- Solarized (Dark/Light)
+- Tomorrow/Tomorrow+
+- Writer/Writer+
 
 ## Theme Development
 
 ### CSS Variables
 
-The themes use CSS variables for easy customization. Common variables include:
+The styles use CSS variables for easy customization. Common variables include:
 
 ```css
 --bg-primary: Main background color
@@ -43,17 +85,7 @@ The themes use CSS variables for easy customization. Common variables include:
 --code-color: Code text color
 ```
 
-See individual theme files for complete variable lists.
-
-### File Structure
-
-```
-.
-├── README.md
-├── styles/
-│   └── [theme-name].css
-└── .gitignore
-```
+See individual style files for complete variable lists.
 
 ## Contributing
 
