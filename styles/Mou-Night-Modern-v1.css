@@ -1,255 +1,309 @@
 /* Mou Night+ Modern Theme v1.0 for MacDown - Radix UI Inspired */
+
+@import url("../fonts/index.css");
+
 :root {
-    /* Base colors from Mou Night+ with modern adjustments */
-    --bg-primary: #282a36;
-    --bg-secondary: #2e303e;
-    --bg-tertiary: #363844;
-    
-    /* Adjusted text colors for better readability */
-    --text-primary: rgba(238, 238, 238, 0.9);
-    --text-secondary: rgba(238, 238, 238, 0.7);
-    --text-tertiary: rgba(238, 238, 238, 0.5);
-    
-    /* Theme colors with opacity variants */
-    --heading-color: rgba(141, 124, 210, 0.95);
-    --emphasis-color: rgba(219, 141, 80, 0.95);
-    --strong-color: rgba(0, 178, 206, 0.95);
-    --link-color: rgba(89, 172, 243, 0.95);
-    --link-hover: rgba(89, 172, 243, 0.8);
-    --code-color: rgba(207, 0, 154, 0.95);
-    --list-color: rgba(255, 255, 0, 0.9);
-    --blockquote-color: rgba(255, 0, 0, 0.8);
-    
-    /* UI elements */
-    --border-subtle: rgba(238, 238, 238, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.2);
-    --selection-bg: rgba(255, 79, 146, 0.3);
-    --selection-fg: #ffffff;
-    
-    /* Radix-inspired radius */
-    --radius-sm: 4px;
-    --radius-md: 6px;
-    --radius-lg: 8px;
-    
-    /* Modern spacing */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
+  /* Base colors from Mou Night+ with modern adjustments */
+  --bg-primary: #1a1b23; /* Darker main background */
+  --bg-secondary: #2e303e;
+  --bg-tertiary: #363844;
+
+  /* Adjusted text colors for better readability */
+  --text-primary: #d1d5db; /* Jasnoszary dla głównego tekstu */
+  --text-secondary: #9ca3af; /* Ciemniejszy szary dla tekstu drugorzędnego */
+  --text-tertiary: rgba(238, 238, 238, 0.5);
+
+  /* Theme colors with opacity variants */
+  --heading-color: rgba(141, 124, 210, 0.95);
+  --emphasis-color: rgba(219, 141, 80, 0.95);
+  --strong-color: rgba(0, 178, 206, 0.95);
+  --link-color: rgba(89, 172, 243, 0.95);
+  --link-hover: rgba(89, 172, 243, 0.8);
+  --code-color: rgba(207, 0, 154, 0.95);
+  --list-color: rgba(255, 255, 0, 0.9);
+  --blockquote-color: rgba(255, 0, 0, 0.8);
+
+  /* UI elements */
+  --border-subtle: rgba(238, 238, 238, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --selection-bg: rgba(255, 79, 146, 0.3);
+  --selection-fg: #ffffff;
+
+  /* Radix-inspired radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+
+  /* Modern spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --heading-color-1: #c4b5fd; /* Jasny fiolet dla h1 */
+  --heading-color-2: #a78bfa; /* Ciemniejszy fiolet dla h2 */
+  --heading-color-3: #8b5cf6; /* Jeszcze ciemniejszy fiolet dla h3-h6 */
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    margin: var(--space-8);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  margin: var(--space-8);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Modern Headings */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-4);
-    letter-spacing: -0.01em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2em;
+  margin-bottom: 0.8em;
 }
 
-h1 { 
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: var(--space-4);
-    border-bottom: 1px solid var(--border-subtle);
+h1 {
+  color: var(--heading-color-1);
+  font-size: 32px;
+  font-weight: 800;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-h2 { 
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: var(--space-2);
+h2 {
+  color: var(--heading-color-2);
+  font-size: 26px;
+  font-weight: 700;
+  padding-bottom: var(--space-2);
 }
 
-h3 { font-size: 17px; }
-h4 { font-size: 15px; }
-h5 { font-size: 13px; }
-h6 { font-size: 11px; }
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color-3);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+h5 {
+  font-size: 13px;
+}
+h6 {
+  font-size: 11px;
+}
 
 /* Modern Links */
 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: all 0.2s ease;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 a:hover {
-    color: var(--link-hover);
-    text-decoration: none;
-    background: rgba(89, 172, 243, 0.1);
-    border-radius: var(--radius-sm);
+  color: var(--link-hover);
+  text-decoration: none;
+  background: rgba(89, 172, 243, 0.1);
+  border-radius: var(--radius-sm);
 }
 
 /* Emphasis and Strong with modern touch */
 em {
-    color: var(--emphasis-color);
-    font-style: italic;
+  color: var(--emphasis-color);
+  font-style: italic;
 }
 
 strong {
-    color: var(--strong-color);
-    font-weight: 600;
+  color: var(--strong-color);
+  font-weight: 600;
 }
 
 /* Modern Code blocks */
 code {
-    font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
-    color: var(--code-color);
-    background: rgba(207, 0, 154, 0.1);
-    padding: 0.2em 0.4em;
-    border-radius: var(--radius-sm);
-    font-size: 0.9em;
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  color: var(--code-color);
+  background: rgba(207, 0, 154, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
 }
 
 pre {
-    background: var(--bg-secondary);
-    padding: var(--space-4);
-    border-radius: var(--radius-lg);
-    overflow: auto;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    margin: var(--space-4) 0;
+  background: var(--bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: auto;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin: 2em 0;
 }
 
 pre code {
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    color: var(--text-primary);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: var(--text-primary);
 }
 
 /* Modern Lists */
-ul, ol {
-    color: var(--list-color);
-    margin: var(--space-4) 0;
-    padding-left: var(--space-6);
+ul,
+ol {
+  color: var(--list-color);
+  margin: 1.5em 0;
+  padding-left: var(--space-6);
 }
 
 li {
-    color: var(--text-primary);
-    margin-bottom: var(--space-2);
-    position: relative;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  position: relative;
 }
 
 /* Modern Blockquotes */
 blockquote {
-    margin: var(--space-4) 0;
-    padding: var(--space-4);
-    background: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    border-left: 3px solid var(--blockquote-color);
-    color: var(--text-secondary);
+  margin: 2em 0;
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--blockquote-color);
+  color: var(--text-secondary);
 }
 
 /* Modern Images */
 img {
-    max-width: 100%;
-    border-radius: var(--radius-md);
-    margin: var(--space-4) 0;
-    box-shadow: 0 2px 4px var(--shadow-color);
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  margin: 2em 0;
+  box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 /* Selection */
 ::selection {
-    background-color: var(--selection-bg);
-    color: var(--selection-fg);
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 /* Modern Horizontal rule */
 hr {
-    border: none;
-    height: 1px;
-    background: var(--border-subtle);
-    margin: var(--space-8) 0;
+  border: none;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 3em 0;
 }
 
 /* Modern Tables */
 table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: var(--space-6) 0;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    background: var(--bg-secondary);
-    box-shadow: 0 2px 4px var(--shadow-color);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0; /* Reduced from 2.5em */
+  border-radius: var(--radius-xl);
+  box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 table th {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    font-weight: 600;
-    text-align: left;
-    padding: var(--space-3) var(--space-4);
-    border-bottom: 1px solid var(--border-subtle);
+  background: #4c3a88aa;
+  color: #965dff;
+  font-weight: 500;
+  text-align: left;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 table td {
-    padding: var(--space-3) var(--space-4);
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-2) var(--space-4);
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-weight: 200;
 }
 
 table tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+table tr:nth-child(odd) {
+  background: #1a1d27;
+}
+
+table tr:nth-child(even) {
+  background: #212534;
 }
 
 table tr:hover {
-    background: var(--bg-tertiary);
+  background: #2c3241;
 }
 
-/* First and last cells in table header */
 table th:first-child {
-    border-top-left-radius: var(--radius-lg);
+  border-top-left-radius: var(--radius-lg);
 }
 
 table th:last-child {
-    border-top-right-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
 }
 
-/* First and last cells in table body's last row */
 table tr:last-child td:first-child {
-    border-bottom-left-radius: var(--radius-lg);
+  border-bottom-left-radius: var(--radius-lg);
 }
 
 table tr:last-child td:last-child {
-    border-bottom-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
 }
 
 /* Print styles */
 @media print {
-    body {
-        margin: 2cm;
-        background-color: white;
-        color: black;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-        color: #333;
-    }
+  body {
+    margin: 2cm;
+    background-color: white;
+    color: black;
+  }
 
-    a {
-        color: #0366d6;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #333;
+  }
 
-    code, pre {
-        background-color: #f6f8fa;
-        color: #24292e;
-    }
+  a {
+    color: #0366d6;
+  }
 
-    blockquote {
-        color: #6a737d;
-        border-color: #dfe2e5;
-    }
+  code,
+  pre {
+    background-color: #f6f8fa;
+    color: #24292e;
+  }
+
+  blockquote {
+    color: #6a737d;
+    border-color: #dfe2e5;
+  }
+}
+
+/* Mermaid chart styling */
+.mermaid {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin: 2em 0;
 }
