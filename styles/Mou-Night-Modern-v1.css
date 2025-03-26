@@ -85,13 +85,14 @@ h2 {
   color: var(--heading-color-2);
   font-size: 26px;
   font-weight: 700;
-  padding-bottom: var(--space-2);
+  padding-bottom: 0;
   transition: color 0.3s ease-in-out;
   display: flex;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-4);
   margin-bottom: 1em;
-  margin-top: 2.2em;
+  margin-top: 3em;
+  margin-left: -1em;
 }
 
 h2::after {
@@ -121,8 +122,8 @@ h4,
 h5,
 h6 {
   color: var(--heading-color-3);
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-4);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
   letter-spacing: -0.01em;
   font-family: "Inter", sans-serif;
 }
@@ -149,7 +150,7 @@ h6::before {
   font-weight: 200;
   opacity: 0.05;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(1.5em);
+  transform: translateX(1.5em) scale(0.8);
 }
 
 /* Individual Header Tag Styles */
@@ -201,6 +202,93 @@ h6:hover::before {
   transform: translateX(0);
 }
 
+/* Common Elements Tag Indicators */
+p,
+ul,
+ol,
+blockquote,
+pre,
+table {
+  position: relative;
+}
+
+p::before,
+ul::before,
+ol::before,
+blockquote::before,
+pre::before,
+table::before {
+  position: absolute;
+  left: -2.4em;
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 0.62em;
+  opacity: 0.045;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(2px) scale(0.98);
+  color: var(--text-secondary);
+  letter-spacing: -0.03em;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* Tag content and positions with adjusted vertical alignment */
+p::before {
+  content: "<p>";
+  top: 0.4em;
+}
+ul::before {
+  content: "<ul>";
+  top: 0.25em;
+}
+ol::before {
+  content: "<ol>";
+  top: 0.25em;
+}
+blockquote::before {
+  content: "<q>";
+  top: 0.25em;
+}
+pre::before {
+  content: "<code>";
+  top: 0.35em;
+}
+table::before {
+  content: "<tbl>";
+  top: -0.15em;
+  color: #965dff;
+  opacity: 0.08;
+  transform: translateX(-1em);
+}
+
+/* Hover effect refinements */
+p:hover::before,
+ul:hover::before,
+ol:hover::before,
+blockquote:hover::before,
+pre:hover::before {
+  opacity: 0.25;
+  transform: translateX(0) scale(1);
+}
+
+table:hover::before {
+  opacity: 0.25;
+  transform: translateX(-2em);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base spacing adjustments */
+p,
+ul,
+ol,
+blockquote,
+pre,
+table {
+  margin-left: 0.6em;
+}
+
 /* Modern Links */
 a {
   color: var(--link-color);
@@ -209,7 +297,7 @@ a {
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var (--link-hover);
   text-decoration: none;
   background: rgba(89, 172, 243, 0.1);
   border-radius: var(--radius-sm);
@@ -302,25 +390,50 @@ hr {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5em 0; /* Reduced from 2.5em */
+  margin: 3em 0;
   border-radius: var(--radius-xl);
-  box-shadow: 0 2px 4px var(--shadow-color);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000;
+  position: relative;
+}
+
+table::after {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  bottom: -24px;
+  left: -24px;
+  box-shadow: 0 0 100px rgba(147, 112, 219, 0.12);
+  z-index: -1;
+  opacity: 0.4;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+table:hover::after {
+  opacity: 1;
 }
 
 table th {
-  background: #4c3a88aa;
-  color: #965dff;
+  background: #4c3a88;
+  color: #e5e7eb;
   font-weight: 500;
   text-align: left;
   padding: var(--space-2) var(--space-4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: default;
 }
 
 table td {
   padding: var(--space-2) var(--space-4);
-  color: var(--text-secondary);
+  color: rgba(229, 231, 235, 0.85); /* Jaśniejszy tekst w komórkach */
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   font-weight: 200;
+  cursor: default;
 }
 
 table tr:last-child td {
@@ -328,15 +441,21 @@ table tr:last-child td {
 }
 
 table tr:nth-child(odd) {
-  background: #1a1d27;
+  background: rgba(26, 29, 39, 0.95);
 }
 
 table tr:nth-child(even) {
-  background: #212534;
+  background: rgba(33, 37, 52, 0.95);
+}
+
+table tr {
+  transition: background-color 0.2s ease-in-out;
+  backface-visibility: hidden;
+  will-change: background-color;
 }
 
 table tr:hover {
-  background: #2c3241;
+  background: rgba(44, 50, 65, 0.98);
 }
 
 table th:first-child {
