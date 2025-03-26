@@ -69,6 +69,7 @@ h5,
 h6 {
   margin-top: 2em;
   margin-bottom: 0.8em;
+  position: relative;
 }
 
 h1 {
@@ -131,35 +132,73 @@ h3 {
   font-weight: 600;
   margin-top: 2.5em;
   margin-bottom: 1em;
-  position: relative;
+}
+
+/* Header Tag Indicators Base Styles */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  position: absolute;
+  left: -4em;
+  top: 0.1em;
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  font-style: italic;
+  font-weight: 200;
+  opacity: 0.05;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(1.5em);
+}
+
+/* Individual Header Tag Styles */
+h1::before {
+  content: "<h1/>";
+  color: var(--heading-color-1);
+  font-size: 0.95em;
+  top: 0.1em;
+}
+
+h2::before {
+  content: "<h2/>";
+  color: var(--heading-color-2);
+  font-size: 0.9em;
 }
 
 h3::before {
   content: "<h3/>";
-  position: absolute;
-  top: 0.2em;
-  left: -4em;
-  font-family: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+  color: var(--heading-color-3);
+  font-size: 0.85em;
+}
+
+h4::before {
+  content: "<h4/>";
+  color: var(--heading-color-3);
   font-size: 0.8em;
-  font-style: italic;
-  font-weight: 200;
-  opacity: 0.1;
 }
 
-h3:hover::before {
-  opacity: 0.7;
-  transition: opacity 0.2s ease-in-out;
+h5::before {
+  content: "<h5/>";
+  color: var(--heading-color-3);
+  font-size: 0.75em;
 }
 
-h4 {
-  font-size: 18px;
-  font-weight: 600;
+h6::before {
+  content: "<h6/>";
+  color: var(--heading-color-3);
+  font-size: 0.7em;
 }
-h5 {
-  font-size: 13px;
-}
-h6 {
-  font-size: 11px;
+
+/* Hover Effects */
+h1:hover::before,
+h2:hover::before,
+h3:hover::before,
+h4:hover::before,
+h5:hover::before,
+h6:hover::before {
+  opacity: 0.6;
+  transform: translateX(0);
 }
 
 /* Modern Links */
